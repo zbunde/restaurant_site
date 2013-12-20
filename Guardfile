@@ -3,4 +3,5 @@
 
 guard :minitest do
   watch(%r{^public/index.html}) { 'test' }
+  watch(%r{^test/.*\.rb}) { 'test' }
 end
