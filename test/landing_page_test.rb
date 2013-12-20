@@ -48,4 +48,11 @@ describe "Landing page" do
       element.text.wont_equal ''
     end
   end
+
+  it "displays the restaurant address in the footer" do
+    visit "/"
+
+    footer = page.find('html body footer address')
+    footer.text.wont_equal ''
+  end
 end
