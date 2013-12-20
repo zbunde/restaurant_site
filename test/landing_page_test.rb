@@ -62,4 +62,20 @@ describe "Landing page" do
     mailto_link = page.find('html body footer a[href^=mailto]')
     mailto_link.text.wont_equal ''
   end
+
+  it "displays the copyright in the footer" do
+    visit "/"
+
+    footer = page.find('html body footer')
+    footer.text.must_match /©/
+    footer.text.must_match /2013/
+  end
+
+  it "does not display the copyright in the address" do
+    visit "/"
+
+    address = page.find('html body footer address')
+    address.text.wont_match /©/
+    address.text.wont_match /2013/
+  end
 end
