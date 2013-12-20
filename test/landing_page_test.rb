@@ -55,4 +55,11 @@ describe "Landing page" do
     footer = page.find('html body footer address')
     footer.text.wont_equal ''
   end
+
+  it "displays a contact us email link in the footer" do
+    visit "/"
+
+    mailto_link = page.find('html body footer a[href^=mailto]')
+    mailto_link.text.wont_equal ''
+  end
 end
