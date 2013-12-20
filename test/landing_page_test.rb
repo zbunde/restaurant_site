@@ -3,22 +3,20 @@ require 'test_helper'
 describe "Landing page" do
   include Capybara::DSL
 
-  it "displays the restaurant name in the browser window" do
+  before do
     visit "/"
+  end
 
+  it "displays the restaurant name in the browser window" do
     page.must_have_css 'html head title', visible: false
   end
 
   it "displays the restaurant name in the header of the page" do
-    visit "/"
-
     header = page.find('html body header')
     header.text.wont_equal ''
   end
 
   it "displays two paragraphs of welcome text" do
-    visit "/"
-
     welcome_text = page.all('html body p')
     welcome_text.length.must_equal 2
 
@@ -28,8 +26,6 @@ describe "Landing page" do
   end
 
   it "displays a list of 5 dishes" do
-    visit "/"
-
     definition_terms = page.all('html body dl dt')
     definition_terms.length.must_equal 5
 
@@ -39,8 +35,6 @@ describe "Landing page" do
   end
 
   it "displays a description for each of 5 dishes" do
-    visit "/"
-
     definition_descriptions = page.all('html body dl dd')
     definition_descriptions.length.must_equal 5
 
@@ -50,30 +44,22 @@ describe "Landing page" do
   end
 
   it "displays the restaurant address in the footer" do
-    visit "/"
-
     address = page.find('html body footer address')
     address.text.wont_equal ''
   end
 
   it "displays a contact us email link in the footer" do
-    visit "/"
-
     mailto_link = page.find('html body footer a[href^=mailto]')
     mailto_link.text.wont_equal ''
   end
 
   it "displays the copyright in the footer" do
-    visit "/"
-
     footer = page.find('html body footer')
     footer.text.must_match /©/
     footer.text.must_match /2013/
   end
 
   it "does not display the copyright in the address" do
-    visit "/"
-
     address = page.find('html body footer address')
     address.text.wont_match /©/
     address.text.wont_match /2013/
