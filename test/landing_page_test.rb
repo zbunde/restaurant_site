@@ -64,4 +64,10 @@ describe "Landing page" do
     address.text.wont_match /©/
     address.text.wont_match /2013/
   end
+
+  it "displays an image of the restaurant" do
+    image = page.find('html body img')
+    image[:src].wont_be_nil
+    image[:src].must_match /images\//
+  end
 end
