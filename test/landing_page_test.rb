@@ -17,7 +17,7 @@ describe "Landing page" do
   end
 
   it "displays two paragraphs of welcome text" do
-    welcome_text = page.all('html body p')
+    welcome_text = page.all('html body main p')
     welcome_text.length.must_equal 2
 
     welcome_text.each do |element|
@@ -26,7 +26,7 @@ describe "Landing page" do
   end
 
   it "displays a list of 5 dishes" do
-    definition_terms = page.all('html body dl dt')
+    definition_terms = page.all('html body main dl dt')
     definition_terms.length.must_equal 5
 
     definition_terms.each do |element|
@@ -35,7 +35,7 @@ describe "Landing page" do
   end
 
   it "displays a description for each of 5 dishes" do
-    definition_descriptions = page.all('html body dl dd')
+    definition_descriptions = page.all('html body main dl dd')
     definition_descriptions.length.must_equal 5
 
     definition_descriptions.each do |element|
@@ -66,7 +66,7 @@ describe "Landing page" do
   end
 
   it "displays an image of the restaurant" do
-    image = page.find('html body img')
+    image = page.find('html body main img')
     image[:src].wont_be_nil
     image[:src].must_match /images\//
   end
