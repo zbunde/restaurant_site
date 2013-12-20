@@ -22,4 +22,18 @@ describe "Landing page" do
     welcome_text = page.all('html body p')
     welcome_text.length.must_equal 2
   end
+
+  it "displays a list of 5 dishes" do
+    visit "/"
+
+    definition_terms = page.all('html body dl dt')
+    definition_terms.length.must_equal 5
+  end
+
+  it "displays a description for each of 5 dishes" do
+    visit "/"
+
+    definition_descriptions = page.all('html body dl dd')
+    definition_descriptions.length.must_equal 5
+  end
 end
