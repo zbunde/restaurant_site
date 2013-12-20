@@ -15,4 +15,11 @@ describe "Landing page" do
     header = page.find('html body header')
     header.text.wont_equal ''
   end
+
+  it "displays two paragraphs of welcome text" do
+    visit "/"
+
+    welcome_text = page.all('html body p')
+    welcome_text.length.must_equal 2
+  end
 end
