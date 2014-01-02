@@ -8,5 +8,4 @@ group :test do
   gem 'launchy', '~> 2.3.0'
   gem 'capybara', '~> 2.2.0'
   gem 'capybara_minitest_spec', '~> 1.0.1'
-  gem 'guard-minitest', '~> 2.0.0'
 end
