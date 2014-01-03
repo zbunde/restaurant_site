@@ -7,7 +7,7 @@ describe "Landing page" do
     visit "/"
   end
 
-  it "displays the restaurant name in the browser window" do
+  it "displays the restaurant name in the browser title" do
     skip
     page.must_have_css 'html head title', visible: false
   end
