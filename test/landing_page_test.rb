@@ -28,22 +28,11 @@ describe "Landing page" do
     end
   end
 
-  it "displays a list of 5 dishes" do
-    skip
-    definition_terms = page.all('html body main dl dt')
-    definition_terms.length.must_equal 5
+  it "displays a list of names for 5 dishes" do
+    dishes = page.all('html body main ul li')
+    dishes.length.must_equal 5
 
-    definition_terms.each do |element|
-      element.text.wont_equal ''
-    end
-  end
-
-  it "displays a description for each of 5 dishes" do
-    skip
-    definition_descriptions = page.all('html body main dl dd')
-    definition_descriptions.length.must_equal 5
-
-    definition_descriptions.each do |element|
+    dishes.each do |element|
       element.text.wont_equal ''
     end
   end
