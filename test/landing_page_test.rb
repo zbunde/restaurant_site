@@ -29,6 +29,7 @@ describe "Landing page" do
   end
 
   it "displays a list of names for 5 dishes" do
+    skip
     dishes = page.all('html body main ul li')
     dishes.length.must_equal 5
 
