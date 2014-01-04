@@ -4,4 +4,4 @@ use Rack::Static,
   :urls => ["/images", "/js", "/css"],
   :root => "public"
 
-run App
+run App.new
