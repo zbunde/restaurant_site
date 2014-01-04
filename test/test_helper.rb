@@ -8,4 +8,4 @@ require 'capybara_minitest_spec'
 
 require_relative '../app'
 
-Capybara.app = App
+Capybara.app = App.new
