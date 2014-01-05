@@ -54,7 +54,7 @@ describe "Landing page" do
     skip
     footer = page.find('html body footer')
     footer.text.must_match /©/
-    footer.text.must_include Time.now.year.to_s
+    footer.text.must_include "2014"
   end
 
   it "displays an image of the restaurant" do
