@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/msgehard/restaurant_site.png)](https://codeclimate.com/github/msgehard/restaurant_site)
+
 This repository contains the basic skeleton for a static web site that can be deployed to [Heroku](http://heroku.com). See [https://devcenter.heroku.com/articles/static-sites-ruby](https://devcenter.heroku.com/articles/static-sites-ruby) for the full details.
 
 This site requires the [Bundler gem](http://bundler.io/) to be installed (`gem install bundler`).
