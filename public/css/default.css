@@ -44,3 +44,11 @@ ul {
 a {
     color: #efa609;
 }
+
+dl {
+    font-size: 1.5em;
+    display: inline-block;
+    width: 40%;
+    margin-left: 1em;
+    vertical-align: middle;
+}
