@@ -5,6 +5,7 @@ require 'minitest/pride'
 require 'rack/test'
 require 'capybara'
 require 'capybara_minitest_spec'
+require 'timecop'
 
 require_relative '../app'
 
